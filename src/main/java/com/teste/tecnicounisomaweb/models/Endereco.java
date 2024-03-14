@@ -26,7 +26,7 @@ public class Endereco {
     @Column(nullable = false)
     private String localidade;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 2)
     private String uf;
 
     public Endereco(){}
