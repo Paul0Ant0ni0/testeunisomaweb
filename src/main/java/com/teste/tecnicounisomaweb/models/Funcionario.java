@@ -4,7 +4,7 @@ package com.teste.tecnicounisomaweb.models;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
@@ -23,14 +23,15 @@ public class Funcionario {
 
     @Column(nullable = false, length = 10)
     @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date dataNascimento;
+    private LocalDate dataNascimento;
 
     @Column(nullable = false, unique = true, length = 15)
     private String telefone;
     @Column(nullable = false)
     private Double salario;
 
-    @OneToOne
+    @OneToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="EnderecoFK")
     private Endereco endereco;
 
     public Funcionario(){}
@@ -38,7 +39,7 @@ public class Funcionario {
             Integer idFuncionario,
             String nome,
             String cpf,
-            Date dataNascimento,
+            LocalDate dataNascimento,
             String telefone,
             Double salario,
             Endereco endereco) {
@@ -75,11 +76,11 @@ public class Funcionario {
         this.cpf = cpf;
     }
 
-    public Date getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
