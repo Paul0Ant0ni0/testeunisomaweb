@@ -25,12 +25,12 @@ public class Funcionario {
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataNascimento;
 
-    @Column(nullable = false, unique = true, length = 15)
+    @Column(nullable = false, length = 15)
     private String telefone;
     @Column(nullable = false)
     private Double salario;
 
-    @OneToOne(fetch=FetchType.LAZY)
+    @OneToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="EnderecoFK")
     private Endereco endereco;
 
@@ -41,15 +41,13 @@ public class Funcionario {
             String cpf,
             LocalDate dataNascimento,
             String telefone,
-            Double salario,
-            Endereco endereco) {
+            Double salario) {
         this.idFuncionario = idFuncionario;
         this.nome = nome;
         this.cpf = cpf;
         this.dataNascimento = dataNascimento;
         this.telefone = telefone;
         this.salario = salario;
-        this.endereco = endereco;
     }
 
     public Integer getIdFuncionario() {

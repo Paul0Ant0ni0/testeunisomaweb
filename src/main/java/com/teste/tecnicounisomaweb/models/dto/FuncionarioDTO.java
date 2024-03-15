@@ -1,9 +1,11 @@
 package com.teste.tecnicounisomaweb.models.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.teste.tecnicounisomaweb.models.Endereco;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.br.CPF;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -22,6 +24,7 @@ public class FuncionarioDTO {
     private String cpf;
 
     @NotNull(message = "Campo data de nascimento é obrigatório!")
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataNascimento;
 
     @NotBlank(message = "O campo telefone é obrigatório")
@@ -29,7 +32,7 @@ public class FuncionarioDTO {
     private String telefone;
 
     @NotNull(message = "O campo salário é obrigatório.")
-    @Size(message = "Limite de caracteres insuficiente!")
+    @Min(value = 0, message = "Limite de caracteres insuficiente!")
     private Double salario;
 
     @NotNull(message = "O campo Endereço é obrigatório")
