@@ -1,5 +1,6 @@
 package com.teste.tecnicounisomaweb.controllers.error;
 
+import com.teste.tecnicounisomaweb.services.errors.FuncionarioExistenteError;
 import com.teste.tecnicounisomaweb.services.errors.ParametrosInsuficientesError;
 import com.teste.tecnicounisomaweb.services.errors.RecursoNaoEncontradoError;
 import com.teste.tecnicounisomaweb.services.errors.RecursosExcedidos;
@@ -54,6 +55,20 @@ public class ResourceExceptionHandler {
            return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).body(response);
 
         }
+
+    @ExceptionHandler(FuncionarioExistenteError.class)
+    public ResponseEntity<CustomErrorResponse> funcionarioExistenteError(FuncionarioExistenteError erro, HttpServletRequest request){
+        CustomErrorResponse response = new CustomErrorResponse();
+
+
+        response.setTimestamp(LocalDateTime.now());
+        response.setStatus(HttpStatus.TOO_MANY_REQUESTS.value());
+        response.setMessage(erro.getMessage());
+        response.setPath(request.getRequestURI());
+
+        return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).body(response);
+
+    }
 
 
 }
