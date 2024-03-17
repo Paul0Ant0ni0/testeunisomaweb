@@ -2,6 +2,7 @@ package com.teste.tecnicounisomaweb.controllers;
 
 
 import com.teste.tecnicounisomaweb.models.DetalhesAlteracaoSalario;
+import com.teste.tecnicounisomaweb.models.DetalhesImpostoRenda;
 import com.teste.tecnicounisomaweb.models.Funcionario;
 import com.teste.tecnicounisomaweb.models.dto.FuncionarioDTO;
 import com.teste.tecnicounisomaweb.services.FuncionarioService;
@@ -30,6 +31,12 @@ public class FuncionarioController {
     @GetMapping("/api/funcionario/reajustesalarial/{cpf}")
     public DetalhesAlteracaoSalario calcReajusteSalarial(@PathVariable String cpf){
         return this.funcionarioService.calcReajusteSalarial(cpf);
+    }
+
+
+    @GetMapping("/api/funcionario/calcimposto/{cpf}")
+    public DetalhesImpostoRenda calcImpostoDeRenda(@PathVariable String cpf){
+        return this.funcionarioService.calcRImpostoRenda(cpf);
     }
 
 }
