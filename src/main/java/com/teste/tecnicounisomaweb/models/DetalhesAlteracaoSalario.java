@@ -2,6 +2,7 @@ package com.teste.tecnicounisomaweb.models;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 public class DetalhesAlteracaoSalario {
     private String cpf;
@@ -54,7 +55,7 @@ public class DetalhesAlteracaoSalario {
     }
 
     public Double convertRoundNumber(Double valor){
-        BigDecimal roundNumber = new BigDecimal(valor).setScale(3, RoundingMode.HALF_EVEN);
-        return roundNumber.doubleValue();
+        DecimalFormat df = new DecimalFormat("#.##");
+        return Double.valueOf(df.format(valor));
     }
 }
