@@ -1,14 +1,12 @@
 package com.teste.tecnicounisomaweb.controllers;
 
 
+import com.teste.tecnicounisomaweb.models.DetalhesAlteracaoSalario;
 import com.teste.tecnicounisomaweb.models.Funcionario;
 import com.teste.tecnicounisomaweb.models.dto.FuncionarioDTO;
 import com.teste.tecnicounisomaweb.services.FuncionarioService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -29,6 +27,9 @@ public class FuncionarioController {
         return this.funcionarioService.salvarFuncionario(dto);
     }
 
-
+    @GetMapping("/api/funcionario/reajustesalarial/{cpf}")
+    public DetalhesAlteracaoSalario calcReajusteSalarial(@PathVariable String cpf){
+        return this.funcionarioService.calcReajusteSalarial(cpf);
+    }
 
 }
