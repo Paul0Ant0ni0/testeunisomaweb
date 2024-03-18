@@ -1,50 +1,41 @@
-# Projeto de Gerenciamento de Funcionários
+# Teste de Desenvolvedor Web - Processo Seletivo
 
-Este projeto tem como objetivo desenvolver uma API RESTful para o gerenciamento de funcionários de uma empresa fictícia chamada UniSoma. A API permitirá cadastrar funcionários, calcular e atualizar seus salários, calcular impostos de renda e fornecer informações sobre os funcionários.
+Este é o teste técnico realizado para o processo seletivo de Desenvolvedor Web na empresa [unisoma](https://www.unisoma.com.br/). O teste consiste na implementação de um projeto em Java 8, incluindo testes unitários com JUnit e Mockito, utilizando a metodologia Kanban. O projeto também faz uso de APIs externas, como o ViaCep.
 
-## Funcionalidades Implementadas
+## Documentação da API
 
-1. **Modelagem de Banco de Dados**: Foi realizada a modelagem do banco de dados utilizando PostgreSQL. O modelo de dados inclui tabelas para armazenar informações sobre os funcionários e seus endereços.
+A documentação da API pode ser encontrada [aqui](https://documenter.getpostman.com/view/21439884/2sA2xpS91U#05dd03e1-98bf-4b14-a7ab-17678fde4c27).
 
-2. **Diagrama de Classes**: Foi criado um diagrama de classes UML para representar a estrutura das entidades no sistema, incluindo as classes `Funcionario` e `Endereco`, juntamente com suas relações e métodos.
+## UML das Classes
 
-3. **Conexão com o Banco de Dados**: Foi implementada a conexão com o banco de dados PostgreSQL para persistência dos dados. Utilizamos o Hibernate como implementação JPA para facilitar o acesso aos dados.
+O diagrama UML das classes pode ser visualizado [aqui](https://gitmind.com/app/docs/f6e1ogxl).
 
-4. **Implementações das Models, Repositories, Services, Controllers e DTOs**: Foram implementadas as classes de modelo (`Funcionario` e `Endereco`), repositórios (`FuncionarioRepository` e `EnderecoRepository`), serviços (`FuncionarioService` e `EnderecoService`), controladores REST (`FuncionarioController` e `EnderecoController`) e DTOs correspondentes para transferência de dados.
+## Repositório GitHub
 
-5. **Teste da API no Postman e Documentação**: A API foi testada no Postman para garantir o correto funcionamento de todos os endpoints. Além disso, a documentação da API foi elaborada utilizando o formato OpenAPI (anteriormente conhecido como Swagger) para facilitar o entendimento e utilização por parte dos desenvolvedores.
+O código-fonte do projeto está disponível no repositório GitHub [aqui](https://github.com/users/Paul0Ant0ni0/projects/4).
 
-6. **Testes Unitários com JUnit e Mockito**: Foram criados testes unitários utilizando JUnit e Mockito para garantir a integridade e robustez do código. Os testes cobrem os principais cenários de uso da API, incluindo casos de sucesso e possíveis cenários de erro.
+## Metodologia
 
-## Como Executar o Projeto
+O desenvolvimento do projeto seguiu a metodologia Kanban para a gestão do trabalho.
 
-1. **Configuração do Ambiente**: Certifique-se de ter o JDK 8 ou superior e o Maven instalados em sua máquina.
+## Tecnologias Utilizadas
 
-2. **Configuração do Banco de Dados**: Crie um banco de dados PostgreSQL e configure as credenciais de acesso no arquivo `application.properties`.
+- Linguagem: Java 8
+- Testes Unitários: JUnit e Mockito
 
-3. **Compilação e Execução**: Utilize o Maven para compilar o projeto e gerar o arquivo JAR executável. Em seguida, execute o JAR para iniciar o servidor.
+## APIs Externas
 
-```bash
-mvn clean package
-java -jar target/nome-do-arquivo.jar
-```
+- ViaCep: Utilizada para obter informações de endereços a partir do CEP.
 
-4. **Testando a API**: Utilize o Postman ou qualquer outra ferramenta de sua preferência para testar os endpoints da API. A documentação da API pode ser acessada em `<URL-da-API>/swagger-ui.html`.
+## Instruções para Execução do Projeto
 
-5. **Execução dos Testes Unitários**: Utilize o Maven para executar os testes unitários.
+1. Clone o repositório do projeto do GitHub.
+2. Certifique-se de ter o Java 8 instalado em seu ambiente de desenvolvimento.
+3. Importe o projeto em sua IDE preferida.
+4. Execute os testes unitários para verificar a integridade do código.
+5. Execute o projeto e utilize a API conforme documentação fornecida.
 
-```bash
-mvn test
-```
+## Contato
 
-## Contribuição
+Para mais informações ou dúvidas sobre este teste, entre em contato através do e-mail: [seu-email@example.com](mailto:seu-email@example.com).
 
-Contribuições são sempre bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request com sugestões, correções de bugs ou novas funcionalidades.
-
-## Licença
-
-Este projeto está licenciado sob a [MIT License](https://opensource.org/licenses/MIT).
-
----
-
-Este README fornece uma visão geral do projeto, descrevendo as funcionalidades implementadas, instruções para execução do projeto, testes e contribuições. Certifique-se de personalizar o README de acordo com as características específicas do seu projeto.
