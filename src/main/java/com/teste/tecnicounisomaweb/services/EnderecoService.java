@@ -44,7 +44,7 @@ public class EnderecoService {
             return enderecoRepository.save(endereco);
         }
     }
-    public Endereco buscarEndereco(String cep) throws RecursoNaoEncontradoError {
+    public Endereco buscarEnderecoApi(String cep) throws RecursoNaoEncontradoError {
         String regex = "\\d{5}-?\\d{3}";
         EnderecoDTO endereco = new EnderecoDTO();
 

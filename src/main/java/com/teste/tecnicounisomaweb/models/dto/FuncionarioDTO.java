@@ -18,9 +18,8 @@ public class FuncionarioDTO {
     @Length(max = 150, message = "Limite de caracteres excedido!")
     private String nome;
 
-    @NotBlank(message = "O campo cpf é obrigatório!")
-    @Length(max = 14, message = "Limite de caracteres excedido!")
-    @CPF(message="O campo cpf é obrigatório")
+    @NotBlank(message = "O campo CPF é obrigatório!")
+    @Size(min = 11, max = 14, message = "O CPF deve conter entre 11 e 14 caracteres!")
     private String cpf;
 
     @NotNull(message = "Campo data de nascimento é obrigatório!")
