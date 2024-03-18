@@ -37,5 +37,5 @@ O desenvolvimento do projeto seguiu a metodologia Kanban para a gestão do traba
 
 ## Contato
 
-Para mais informações ou dúvidas sobre este teste, entre em contato através do e-mail: [seu-email@example.com](mailto:seu-email@example.com).
+Para mais informações ou dúvidas sobre este teste, entre em contato através do e-mail: [dev.pauloantonio785@gmail.com](mailto:dev.pauloantonio785@gmail.com).
 
