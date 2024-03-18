@@ -10,7 +10,7 @@ A documentação da API pode ser encontrada [aqui](https://documenter.getpostman
 
 O diagrama UML das classes pode ser visualizado [aqui](https://gitmind.com/app/docs/f6e1ogxl).
 
-## Repositório GitHub
+## Repositório GitHub Projects
 
 O código-fonte do projeto está disponível no repositório GitHub [aqui](https://github.com/users/Paul0Ant0ni0/projects/4).
 
