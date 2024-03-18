@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,7 +39,7 @@ public class FuncionarioService {
         if (funcionarioExistente.isPresent()) {
             throw new FuncionarioExistenteError("Funcionário já existente.");
         } else {
-            Endereco endereco = enderecoService.buscarEndereco(dto.getEndereco().getCep());
+            Endereco endereco = enderecoService.buscarEnderecoApi(dto.getEndereco().getCep());
             Funcionario funcionario = new Funcionario(
                     null,
                     dto.getNome(),

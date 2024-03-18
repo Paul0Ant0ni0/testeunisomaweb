@@ -4,21 +4,24 @@ import com.teste.tecnicounisomaweb.models.Endereco;
 import com.teste.tecnicounisomaweb.models.Funcionario;
 import com.teste.tecnicounisomaweb.models.dto.FuncionarioDTO;
 import com.teste.tecnicounisomaweb.services.EnderecoService;
-import junit.framework.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 
 import java.time.LocalDate;
 import java.util.Optional;
 
-@DataJpaTest
 @ActiveProfiles("test")
-public class FuncionarioRepositoryTest extends TestCase {
+@ExtendWith(SpringExtension.class)
+@SpringBootTest
+public class FuncionarioRepositoryTest{
 
     @Autowired
     EnderecoService enderecoService;
@@ -27,19 +30,10 @@ public class FuncionarioRepositoryTest extends TestCase {
     FuncionarioRepository funcionarioRepository;
 
     @Test
-    @DisplayName("Deve obter o usuário com sucesso do banco de dados")
+    @DisplayName("Deve obter o funcionário com sucesso do banco de dados")
     public void testFindByCpfCase1() {
 
-            Endereco endereco = new Endereco(
-                    null,
-                    "13073-220",
-                    "Rua Rocha Camargo",
-                    "",
-                    "Jardim Guanabara",
-                    "Campinas",
-                    "SP");
-
-            System.out.println(endereco);
+            Endereco endereco = this.enderecoService.buscarEnderecoApi("13073-220");
             FuncionarioDTO dto = new FuncionarioDTO();
             dto.setNome("Amanda Alves");
             dto.setCpf("821.943.350-72");
@@ -56,8 +50,9 @@ public class FuncionarioRepositoryTest extends TestCase {
 
     }
 
+
     private Funcionario criarFuncionario(FuncionarioDTO dto){
-        Endereco endereco = this.enderecoService.buscarEndereco(dto.getEndereco().getCep());
+        Endereco endereco = this.enderecoService.buscarEnderecoApi(dto.getEndereco().getCep());
         Funcionario funcionario =
                 new Funcionario(null,
                         dto.getNome(),

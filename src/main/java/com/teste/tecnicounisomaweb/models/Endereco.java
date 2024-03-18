@@ -12,7 +12,7 @@ public class Endereco {
     @Column(nullable = false, unique = true, updatable = false)
     private Integer idEndereco;
 
-    @Column(nullable = false, length = 9)
+    @Column(nullable = false, unique = true, length = 9)
     private String cep;
 
     @Column(nullable = false)

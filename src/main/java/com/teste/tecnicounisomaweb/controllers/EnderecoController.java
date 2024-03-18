@@ -18,7 +18,7 @@ public class EnderecoController {
 
     @GetMapping("/api/{cep}")
     public Endereco getEndereco(@PathVariable String cep) {
-        return this.enderecoService.buscarEndereco(cep);
+        return this.enderecoService.buscarEnderecoApi(cep);
     }
 
 }
